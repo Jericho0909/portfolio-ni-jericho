@@ -5,8 +5,19 @@ export default {
     "./src/**/*.{js,jsx,ts,tsx}"
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        Mcolor: "#EA5A0B",
+      },
+      fontFamily: {
+        Htext: ['"Dosis"', 'sans-serif'],
+      },
+    },
   },
-  plugins: [],
+  plugins: [
+    function ({ addVariant }) {
+      addVariant('hoverable', '@media (hover: hover) and (pointer: fine)');
+    },
+  ],
 }
 
