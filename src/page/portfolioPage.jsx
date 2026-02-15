@@ -1,6 +1,7 @@
 import Header from "../components/header"
 import Main from "../components/main"
 const PortfolioPage = () => {
+
     const handleScrollToSection = (id) => {
         const sectionId = document.getElementById(id)
         if(sectionId){

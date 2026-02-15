@@ -9,9 +9,13 @@ const Main = () => {
             className="mt-[4.50rem] w-full h-auto p-1"
         >
             <Home/>
+            <div className="w-full h-[20svh]"></div>
             <About/>
+            <div className="w-full h-[20svh]"></div>
             <Projects/>
+            <div className="w-full h-[20svh]"></div>
             <TechStack/>
+            <div className="w-full h-[20svh]"></div>
             <Contact/>
         </main>
     )

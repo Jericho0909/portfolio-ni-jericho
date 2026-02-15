@@ -11,6 +11,7 @@ export default {
       },
       fontFamily: {
         Htext: ['"Dosis"', 'sans-serif'],
+        Ptext: [ '"Lato"', 'sans-serif' ]
       },
     },
   },
