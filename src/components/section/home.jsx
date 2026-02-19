@@ -107,7 +107,7 @@ const Home = () => {
                             document.getElementById('contact')
                             .scrollIntoView({ behavior: 'smooth', block: 'center' })
                         }}
-                        className="flex items-center px-6 gap-2 py-3 text-base text-white border-x-2  border-Mcolor rounded-md transition-transform duration-300 hover:scale-105 focus:outline-none"
+                        className="flex items-center px-6 py-3 gap-2 text-base text-white border-x-2  border-Mcolor rounded-md transition-transform duration-300 hover:scale-105 focus:outline-none"
                     >
                         <span>
                             Let's Talk

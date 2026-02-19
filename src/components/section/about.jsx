@@ -24,10 +24,10 @@ const About = () => {
             <motion.div 
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                 viewport={{ once: true, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.3 }}
                 transition={{ 
                     duration: 0.8, 
-                    delay: 0.4, 
+                    delay: 0.3, 
                     ease: "easeIn" 
                 }}
                 className="flex items-center justify-around flex-col w-full sm:w-[85%] lg:w-[70%] xl:w-[55%] h-auto p-3 border border-white"
@@ -53,12 +53,12 @@ const About = () => {
                                 While others focus on how things look, I focus on how they feel.
                             </h2>
 
-                            <p className="text-gray-400 font-Htext font-medium text-[clamp(0.85rem,1.5vw,1rem)]">
+                            <p className="text-gray-400 font-Ptext font-medium text-[clamp(0.85rem,1.5vw,1rem)]">
                                 I'm a React Developer who prioritizes UX design — building websites that are smooth, accessible, and effortless to navigate, whether on desktop or mobile.
                             </p>
                         </div>
 
-                        <ul className="flex  flex-col gap-3 p-4 text-gray-400 font-medium text-[clamp(0.85rem,1.5vw,1rem)] border border-white rounded-md">
+                        <ul className="flex  flex-col gap-3 p-4 text-gray-400 font-Ptext font-medium text-[clamp(0.85rem,1.5vw,1rem)] border border-white rounded-md">
                             <li className="flex items-center gap-2">
                                 <span className="text-green-400 font-bold">✔</span>
                                 Responsive Web Design — works on any device

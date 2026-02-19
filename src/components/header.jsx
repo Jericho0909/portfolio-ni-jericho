@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
-import useWindowSizeCheck from '../usehooks/useWindowSize';
 import ActiveSectionContext from '../context/activeSectionContext';
+import WindowSizeContext from '../context/windowSizeContext';
 import { House } from 'lucide-react';
 import { SquareUser } from 'lucide-react';
 import { Code } from 'lucide-react';
@@ -10,14 +10,12 @@ import { Menu } from 'lucide-react';
 import { motion } from "framer-motion";
 
 const Header = ({handleScrollToSection}) => {
-    const isMobile = useWindowSizeCheck()
     const { activeSection } = useContext(ActiveSectionContext)
+    const { isMobile } = useContext(WindowSizeContext)
     const [ isHamburgerMenuOpen, setIsHamburgerMenuOpen ] = useState(false)
     const [ hasAnimeted, setHasAnimated ] = useState(false)
 
-    useEffect(() => {
-        console.log(activeSection)
-    }, [activeSection])
+   
 
     useEffect(() => {
         setHasAnimated(true)
