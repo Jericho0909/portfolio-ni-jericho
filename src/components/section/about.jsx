@@ -21,7 +21,7 @@ const About = () => {
         <section
             ref={ref}
             id="about"
-            className={`flex items-center justify-center w-full h-[80svh] p-1 mb-4 scroll-mt-20 sm:scroll-mt-32 ${isSmallMobile && "scroll-mt-60"}`}
+            className={`flex items-center justify-center w-full h-[80svh] p-1 mb-4 scroll-mt-20 sm:scroll-mt-32 ${isSmallMobile && "scroll-mt-56"}`}
         >
             <motion.div 
                 initial={{ opacity: 0, y: 40 }}

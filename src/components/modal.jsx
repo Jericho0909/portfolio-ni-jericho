@@ -24,12 +24,15 @@ const Modal = ({ selectedProject, setSelectedProject }) => {
         }
     }, [isOpen])
 
-    if(!isOpen) return
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-            <div 
+            <motion.div 
                 ref={modalRef}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
                 className="relative w-full max-w-6xl h-full sm:h-auto rounded-2xl border-2 bg-black shadow-2xl p-2"
             >
                 <div className="absolute top-4 sm:top-2 right-2 p-2">
@@ -128,7 +131,7 @@ const Modal = ({ selectedProject, setSelectedProject }) => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </div>
     )
 }

@@ -4,6 +4,7 @@ import ModalContext from "../context/modalContext"
 import Header from "../components/header"
 import Main from "../components/main"
 import Modal from "../components/modal"
+import { AnimatePresence } from "framer-motion"
 const PortfolioPage = () => {
     const { isOpen } = useContext(ModalContext)
     const { isSmallMobile } = useContext(WindowSizeContext)
@@ -39,12 +40,14 @@ const PortfolioPage = () => {
             <Header
                 handleScrollToSection={handleScrollToSection}
             />
-            {isOpen && (
-                <Modal
-                    selectedProject={selectedProject}
-                    setSelectedProject={setSelectedProject}
-                />
-            )}
+            <AnimatePresence mode="wait">
+                {isOpen && (
+                    <Modal
+                        selectedProject={selectedProject}
+                        setSelectedProject={setSelectedProject}
+                    />
+                )}
+            </AnimatePresence>
             <Main
                 setSelectedProject={setSelectedProject}
             />

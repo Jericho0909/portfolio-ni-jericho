@@ -19,7 +19,9 @@ const Header = ({handleScrollToSection}) => {
 
    
     useEffect(() => {
-        setHasAnimated(true)
+        if(hasAnimeted){
+            setHasAnimated(true)
+        }
     }, [])
     
     useEffect(() => {
@@ -48,15 +50,17 @@ const Header = ({handleScrollToSection}) => {
                     `}
                 >
                     <motion.li
-                        initial={(hasAnimeted && !isMobile) ? { scale: 0.9, opacity: 0 } : false}
+                        initial={{ scale: !isMobile ? 0.9 : 1, opacity: !isMobile ? 0 : 1 }}
                         animate={{ opacity: 1, scale: 1}}
                         transition={{ 
                             duration: 0.4, 
                             delay: 0.4, 
                             ease: "easeIn" 
                         }}
-                        onAnimationComplete={() => setHasAnimated(false)}
-                        onClick={() => handleScrollToSection("home")}
+                        onClick={() => {
+                            handleScrollToSection("home")
+                            setIsHamburgerMenuOpen(false)
+                        }}
                         className={`flex items-center cursor-pointer p-2 border border-transparent
                             ${activeSection === "home"
                                 ? "border-white text-orange-500 font-semibold rounded-md"
@@ -70,7 +74,7 @@ const Header = ({handleScrollToSection}) => {
                         </span>
                     </motion.li>
                     <motion.li
-                        initial={(hasAnimeted && !isMobile) ? { scale: 0.9, opacity: 0 } : false}
+                        initial={{ scale: !isMobile ? 0.9 : 1, opacity: !isMobile ? 0 : 1 }}
                         animate={{ opacity: 1, scale: 1}}
                         transition={{ 
                             duration: 0.4, 
@@ -78,7 +82,10 @@ const Header = ({handleScrollToSection}) => {
                             ease: "easeIn" 
                         }}
                         onAnimationComplete={() => setHasAnimated(false)}
-                        onClick={() => handleScrollToSection("about")}
+                        onClick={() => {
+                            handleScrollToSection("about")
+                            setIsHamburgerMenuOpen(false)
+                        }}
                         className={`flex items-center cursor-pointer p-2 border border-transparent
                             ${activeSection === "about"
                                 ? "border-white text-orange-500 font-semibold rounded-md"
@@ -92,7 +99,7 @@ const Header = ({handleScrollToSection}) => {
                         </span>
                     </motion.li>
                     <motion.li 
-                        initial={(hasAnimeted && !isMobile) ? { scale: 0.9, opacity: 0 } : false}
+                        initial={{ scale: !isMobile ? 0.9 : 1, opacity: !isMobile ? 0 : 1 }}
                         animate={{ opacity: 1, scale: 1}}
                         transition={{ 
                             duration: 0.4, 
@@ -100,7 +107,10 @@ const Header = ({handleScrollToSection}) => {
                             ease: "easeIn" 
                         }}
                         onAnimationComplete={() => setHasAnimated(false)}
-                        onClick={() => handleScrollToSection("projects")}
+                        onClick={() => {
+                            handleScrollToSection("projects")
+                            setIsHamburgerMenuOpen(false)
+                        }}
                         className={`flex items-center cursor-pointer p-2 border border-transparent
                             ${activeSection === "projects"
                                 ? "border-white text-orange-500 font-semibold rounded-md"
@@ -114,7 +124,7 @@ const Header = ({handleScrollToSection}) => {
                         </span>
                     </motion.li>
                     <motion.li 
-                        initial={(hasAnimeted && !isMobile) ? { scale: 0.9, opacity: 0 } : false}
+                        initial={{ scale: !isMobile ? 0.9 : 1, opacity: !isMobile ? 0 : 1 }}
                         animate={{ opacity: 1, scale: 1}}
                         transition={{ 
                             duration: 0.4, 
@@ -122,7 +132,10 @@ const Header = ({handleScrollToSection}) => {
                             ease: "easeIn" 
                         }}
                         onAnimationComplete={() => setHasAnimated(false)}
-                        onClick={() => handleScrollToSection("techstack")}
+                        onClick={() => {
+                            handleScrollToSection("techstack")
+                            setIsHamburgerMenuOpen(false)
+                        }}
                         className={`flex items-center cursor-pointer p-2 border border-transparent
                             ${activeSection === "techstack"
                                 ? "border-white text-orange-500 font-semibold rounded-md"
@@ -136,14 +149,17 @@ const Header = ({handleScrollToSection}) => {
                         </span>
                     </motion.li>
                     <motion.li 
-                        initial={(hasAnimeted && !isMobile) ? { scale: 0.9, opacity: 0 } : false}
+                        initial={{ scale: !isMobile ? 0.9 : 1, opacity: !isMobile ? 0 : 1 }}
                         animate={{ opacity: 1, scale: 1}}
                         transition={{ 
                             duration: 0.4, 
                             delay: 0.4, 
                             ease: "easeIn"  
                         }}
-                        onClick={() => handleScrollToSection("contact")}
+                        onClick={() => {
+                            handleScrollToSection("contact")
+                            setIsHamburgerMenuOpen(false)
+                        }}
                         className={`flex items-center cursor-pointer p-2 border border-transparent
                             ${activeSection === "contact"
                                 ? "border-white text-orange-500 font-semibold rounded-md"
