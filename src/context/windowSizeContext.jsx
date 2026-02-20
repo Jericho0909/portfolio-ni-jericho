@@ -4,13 +4,14 @@ import useWindowSizeCheck from "../usehooks/useWindowSize";
 const WindowSizeContext = createContext()
 
 export const WindowSizeProvider = ({children}) => {
-    const { isMobile, stackedCard } = useWindowSizeCheck()
+    const { isMobile, stackedCard, isSmallMobile } = useWindowSizeCheck()
 
     return(
         <WindowSizeContext.Provider
             value={{
                 isMobile,
-                stackedCard
+                stackedCard,
+                isSmallMobile
             }}
         >
             {children}

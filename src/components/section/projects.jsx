@@ -22,7 +22,7 @@ import M3img from "../../assets/img/M3web.webp"
 const Projects = ({setSelectedProject}) => {
     const { ref, isVisible } = useSectionInView()
     const { setActiveSection } = useContext(ActiveSectionContext)
-    const { stackedCard } = useContext(WindowSizeContext)
+    const { stackedCard, isSmallMobile } = useContext(WindowSizeContext)
     const { toggleModal } = useContext(ModalContext)
 
     const projectsArr = [
@@ -132,7 +132,7 @@ const Projects = ({setSelectedProject}) => {
         <section 
             ref={ref}
             id="projects"
-            className="flex justify-center w-full h-[70svh] p-1 mb-4"
+            className={`flex justify-center w-full h-[70svh] p-1 mb-4  scroll-mt-20 sm:scroll-mt-32 ${isSmallMobile && "scroll-mt-60"}`}
         >
             <motion.div 
                 initial={{ opacity: 0, y: 40 }}

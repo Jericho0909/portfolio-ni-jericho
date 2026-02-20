@@ -1,10 +1,12 @@
 import { useEffect, useContext } from "react"
+import WindowSizeContext from "../../context/windowSizeContext"
 import ActiveSectionContext from "../../context/activeSectionContext"
 import useSectionInView from "../../usehooks/useSectionInView"
 import { motion } from "framer-motion"
 import CodeImg from "../../assets/img/code.webp"
 const About = () => {
     const { ref, isVisible } = useSectionInView()
+    const { isSmallMobile } = useContext(WindowSizeContext)
     const { setActiveSection } = useContext(ActiveSectionContext)
 
     useEffect(() => {
@@ -19,7 +21,7 @@ const About = () => {
         <section
             ref={ref}
             id="about"
-            className="flex items-center justify-center w-full h-[80svh] p-1 mb-4 scroll-mt-28"
+            className={`flex items-center justify-center w-full h-[80svh] p-1 mb-4 scroll-mt-20 sm:scroll-mt-32 ${isSmallMobile && "scroll-mt-60"}`}
         >
             <motion.div 
                 initial={{ opacity: 0, y: 40 }}
