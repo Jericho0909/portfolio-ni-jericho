@@ -118,7 +118,6 @@ const Projects = ({setSelectedProject}) => {
 
     const handleOpenModal = (id) => {
         const project = projectsArr.find(project => project.id === id)
-        console.log(project)
         setSelectedProject(project)
         toggleModal()
     }

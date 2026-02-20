@@ -1,6 +1,7 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext, useRef } from 'react';
 import ActiveSectionContext from '../context/activeSectionContext';
 import WindowSizeContext from '../context/windowSizeContext';
+import ClickAnyWhere from '../utils/clickAnywhere';
 import { House } from 'lucide-react';
 import { SquareUser } from 'lucide-react';
 import { Code } from 'lucide-react';
@@ -14,9 +15,9 @@ const Header = ({handleScrollToSection}) => {
     const { isMobile } = useContext(WindowSizeContext)
     const [ isHamburgerMenuOpen, setIsHamburgerMenuOpen ] = useState(false)
     const [ hasAnimeted, setHasAnimated ] = useState(false)
+    const hamburgerRef = useRef(null)
 
    
-
     useEffect(() => {
         setHasAnimated(true)
     }, [])
@@ -24,6 +25,12 @@ const Header = ({handleScrollToSection}) => {
     useEffect(() => {
         if(!isMobile){
             setIsHamburgerMenuOpen(false)
+        }
+    }, [isMobile])
+
+    useEffect(() => {
+        if(isMobile){
+            ClickAnyWhere(hamburgerRef, setIsHamburgerMenuOpen)
         }
     }, [isMobile])
 
@@ -161,16 +168,21 @@ const Header = ({handleScrollToSection}) => {
             {isMobile
                 ? (
                     <>
-                        <button
-                            type="button"
-                            onClick={() => setIsHamburgerMenuOpen(prev => !prev)}
-                            className="border border-transparent p-2 hoverable:hover:border-orange-500 transition-all duration-300 rounded mr-2"
+                        <div 
+                            ref={hamburgerRef}
+                            className="w-auto h-auto p-1"
                         >
-                            <Menu size={30} color="#EA5A0B"/>
-                        </button>
-                        {isHamburgerMenuOpen && (
-                            <NavContent/>
-                        )}
+                            <button
+                                type="button"
+                                onClick={() => setIsHamburgerMenuOpen(prev => !prev)}
+                                className="border border-transparent p-2 hoverable:hover:border-orange-500 transition-all duration-300 rounded mr-2"
+                            >
+                                <Menu size={30} color="#EA5A0B"/>
+                            </button>
+                            {isHamburgerMenuOpen && (
+                                <NavContent/>
+                            )}
+                        </div>
                     </>
                 )
                 : (

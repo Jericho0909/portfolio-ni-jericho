@@ -4,11 +4,12 @@ import useModal from "../usehooks/useModal";
 const ModalContext = createContext()
 
 export const ModalProvider = ({children}) => {
-    const { isOpen, toggleModal } = useModal()
+    const { isOpen, setIsOpen, toggleModal } = useModal()
     return (
         <ModalContext.Provider
             value={{
                 isOpen,
+                setIsOpen,
                 toggleModal
             }}
         >

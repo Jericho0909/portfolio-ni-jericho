@@ -1,27 +1,38 @@
-import { useContext, useState, useEffect } from "react"
+import { useContext, useState, useEffect, useRef } from "react"
 import ModalContext from "../context/modalContext"
 import WindowSizeContext from "../context/windowSizeContext";
+import ClickAnyWhere from "../utils/clickAnywhere";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from 'lucide-react';
 const Modal = ({ selectedProject, setSelectedProject }) => {
-    const { isOpen, toggleModal } = useContext(ModalContext)
+    const { isOpen, setIsOpen, toggleModal } = useContext(ModalContext)
     const { isMobile } = useContext(WindowSizeContext)
     const [ index, setIndex ] = useState(0)
+    const modalRef = useRef(null)
 
     useEffect(() => {
         const interval = setInterval(() => {
-        setIndex((prev) => (prev + 1) % selectedProject.image.length)
+            setIndex((prev) => (prev + 1) % selectedProject.image.length)
         }, 3000)
 
-        return () => clearInterval(interval)
+            return () => clearInterval(interval)
     }, [])
+
+    useEffect(() => {
+        if(isOpen){
+            ClickAnyWhere(modalRef, setIsOpen)
+        }
+    }, [isOpen])
 
     if(!isOpen) return
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
-            <div className="relative w-full max-w-6xl rounded-2xl border-2 bg-black shadow-2xl overflow-hidden">
-                <div className="flex justify-end p-4">
+            <div 
+                ref={modalRef}
+                className="relative w-full max-w-6xl h-full sm:h-auto rounded-2xl border-2 bg-black shadow-2xl p-2"
+            >
+                <div className="absolute top-4 sm:top-2 right-2 p-2">
                     <button 
                         onClick={() => {
                             toggleModal()
@@ -32,13 +43,13 @@ const Modal = ({ selectedProject, setSelectedProject }) => {
                         <X size={22} color="#EA5A0B"/>
                     </button>
                 </div>
-                <div className={`flex w-full p-2 gap-3
-                    ${isMobile ? "flex-col" : "flex-row"}    
+                <div className={`flex w-full h-full p-2 gap-3 sm:mt-[2rem]
+                    ${isMobile ? "flex-col justify-center " : "flex-row"}    
                 `}>
-                    <div className="flex-1">
+                    <div className="w-auto sm:flex-1">
                         {isMobile
                             ? (
-                                <div className="relative w-full h-[15rem] sm:h-[20rem] overflow-hidden rounded-2xl">
+                                <div className="relative w-full h-[15rem] sm:h-[23rem] overflow-hidden rounded-2xl mt-[3rem]">
                                     <AnimatePresence mode="wait">
                                         <motion.img
                                             key={index}
@@ -47,7 +58,7 @@ const Modal = ({ selectedProject, setSelectedProject }) => {
                                             animate={{ opacity: 1 }}
                                             exit={{ opacity: 0 }}
                                             transition={{ duration: 0.8 }}
-                                            className="w-full object-fill"
+                                            className="w-full h-full object-fill"
                                         />
                                     </AnimatePresence>
                                 </div>
@@ -64,12 +75,15 @@ const Modal = ({ selectedProject, setSelectedProject }) => {
                             )
                         }
                     </div>
-                    <div className="flex items-center justify-start flex-col flex-1">
+                    <div className="flex items-center justify-start flex-col sm:flex-1">
                         {!isMobile && (
                             <div className="flex items-center justify-center w-full h-full overflow-hidden rounded-xl gap-2 mb-2 ">
                                 {selectedProject.image.map((img, index) => (
                                     (index !== 0 && (
-                                        <div className="w-full h-full">
+                                        <div
+                                            key={index}
+                                            className="w-full h-full"
+                                            >
                                             <img
                                                 src={img}
                                                 alt={`${selectedProject.title}-Img`}
@@ -81,7 +95,7 @@ const Modal = ({ selectedProject, setSelectedProject }) => {
                                 ))}
                             </div>
                         )}
-                        <div className="w-full h-full p-4">
+                        <div className="w-full h-auto p-2 ">
                             <h2 className="text-gray-400 font-Ptext italic mb-4 font-medium text-[clamp(0.90rem,1.5vw,1.05rem)]">
                                 {selectedProject.title}
                             </h2>
