@@ -19,9 +19,7 @@ const Header = ({handleScrollToSection}) => {
 
    
     useEffect(() => {
-        if(hasAnimeted){
-            setHasAnimated(true)
-        }
+        setHasAnimated(true)
     }, [])
     
     useEffect(() => {
@@ -49,14 +47,7 @@ const Header = ({handleScrollToSection}) => {
                         ${isHamburgerMenuOpen ? "flex-col gap-2" : "gap-6"}
                     `}
                 >
-                    <motion.li
-                        initial={{ scale: !isMobile ? 0.9 : 1, opacity: !isMobile ? 0 : 1 }}
-                        animate={{ opacity: 1, scale: 1}}
-                        transition={{ 
-                            duration: 0.4, 
-                            delay: 0.4, 
-                            ease: "easeIn" 
-                        }}
+                    <li
                         onClick={() => {
                             handleScrollToSection("home")
                             setIsHamburgerMenuOpen(false)
@@ -72,15 +63,8 @@ const Header = ({handleScrollToSection}) => {
                         <span className="ml-2 text-Mcolor font-Htext font-semibold text-[clamp(0.90rem,1.5vw,1.05rem)]">
                             Home
                         </span>
-                    </motion.li>
-                    <motion.li
-                        initial={{ scale: !isMobile ? 0.9 : 1, opacity: !isMobile ? 0 : 1 }}
-                        animate={{ opacity: 1, scale: 1}}
-                        transition={{ 
-                            duration: 0.4, 
-                            delay: 0.4, 
-                            ease: "easeIn" 
-                        }}
+                    </li>
+                    <li
                         onAnimationComplete={() => setHasAnimated(false)}
                         onClick={() => {
                             handleScrollToSection("about")
@@ -97,15 +81,8 @@ const Header = ({handleScrollToSection}) => {
                         <span className="ml-2 text-Mcolor font-Htext font-semibold text-[clamp(0.90rem,1.5vw,1.05rem)]">
                             About
                         </span>
-                    </motion.li>
-                    <motion.li 
-                        initial={{ scale: !isMobile ? 0.9 : 1, opacity: !isMobile ? 0 : 1 }}
-                        animate={{ opacity: 1, scale: 1}}
-                        transition={{ 
-                            duration: 0.4, 
-                            delay: 0.4, 
-                            ease: "easeIn" 
-                        }}
+                    </li>
+                    <li 
                         onAnimationComplete={() => setHasAnimated(false)}
                         onClick={() => {
                             handleScrollToSection("projects")
@@ -122,15 +99,8 @@ const Header = ({handleScrollToSection}) => {
                         <span className="ml-2 text-Mcolor font-Htext font-semibold text-[clamp(0.90rem,1.5vw,1.05rem)]">
                             Projects
                         </span>
-                    </motion.li>
-                    <motion.li 
-                        initial={{ scale: !isMobile ? 0.9 : 1, opacity: !isMobile ? 0 : 1 }}
-                        animate={{ opacity: 1, scale: 1}}
-                        transition={{ 
-                            duration: 0.4, 
-                            delay: 0.4, 
-                            ease: "easeIn" 
-                        }}
+                    </li>
+                    <li 
                         onAnimationComplete={() => setHasAnimated(false)}
                         onClick={() => {
                             handleScrollToSection("techstack")
@@ -147,8 +117,8 @@ const Header = ({handleScrollToSection}) => {
                         <span className="ml-2 text-Mcolor font-Htext font-semibold text-[clamp(0.90rem,1.5vw,1.05rem)]">
                             Tech Stack
                         </span>
-                    </motion.li>
-                    <motion.li 
+                    </li>
+                    <li 
                         initial={{ scale: !isMobile ? 0.9 : 1, opacity: !isMobile ? 0 : 1 }}
                         animate={{ opacity: 1, scale: 1}}
                         transition={{ 
@@ -171,16 +141,20 @@ const Header = ({handleScrollToSection}) => {
                         <span className="ml-2 text-Mcolor font-Htext font-semibold text-[clamp(0.90rem,1.5vw,1.05rem)]">
                             Contact
                         </span>
-                    </motion.li>
+                    </li>
                 </ul>
             </nav>
         )
     }
 
     return(
-        <header className={`fixed top-0 flex items-center w-full h-[4.50rem] p-1 z-50 bg-black border-b-2 border-white
-            ${isMobile ? "justify-end" : "justify-center"}
-        `}>
+        <motion.header
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 1 }}
+            className={`fixed top-0 flex items-center w-full h-[4.50rem] p-1 z-50 bg-black border-b-2 border-white
+            ${isMobile ? "justify-end" : "justify-center"}`}
+        >
             {isMobile
                 ? (
                     <>
@@ -205,7 +179,7 @@ const Header = ({handleScrollToSection}) => {
                     <NavContent/>
                 )
             }
-        </header>
+        </motion.header>
     )
 }
 
