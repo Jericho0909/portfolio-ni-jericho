@@ -14,13 +14,7 @@ const Header = ({handleScrollToSection}) => {
     const { activeSection } = useContext(ActiveSectionContext)
     const { isMobile } = useContext(WindowSizeContext)
     const [ isHamburgerMenuOpen, setIsHamburgerMenuOpen ] = useState(false)
-    const [ hasAnimeted, setHasAnimated ] = useState(false)
     const hamburgerRef = useRef(null)
-
-   
-    useEffect(() => {
-        setHasAnimated(true)
-    }, [])
     
     useEffect(() => {
         if(!isMobile){
@@ -65,7 +59,6 @@ const Header = ({handleScrollToSection}) => {
                         </span>
                     </li>
                     <li
-                        onAnimationComplete={() => setHasAnimated(false)}
                         onClick={() => {
                             handleScrollToSection("about")
                             setIsHamburgerMenuOpen(false)
@@ -83,7 +76,6 @@ const Header = ({handleScrollToSection}) => {
                         </span>
                     </li>
                     <li 
-                        onAnimationComplete={() => setHasAnimated(false)}
                         onClick={() => {
                             handleScrollToSection("projects")
                             setIsHamburgerMenuOpen(false)
@@ -101,7 +93,6 @@ const Header = ({handleScrollToSection}) => {
                         </span>
                     </li>
                     <li 
-                        onAnimationComplete={() => setHasAnimated(false)}
                         onClick={() => {
                             handleScrollToSection("techstack")
                             setIsHamburgerMenuOpen(false)

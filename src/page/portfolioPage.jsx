@@ -3,6 +3,7 @@ import WindowSizeContext from "../context/windowSizeContext"
 import ModalContext from "../context/modalContext"
 import Header from "../components/header"
 import Main from "../components/main"
+import Footer from "../components/footer"
 import Modal from "../components/modal"
 import { AnimatePresence } from "framer-motion"
 const PortfolioPage = () => {
@@ -51,6 +52,7 @@ const PortfolioPage = () => {
             <Main
                 setSelectedProject={setSelectedProject}
             />
+            <Footer/>
         </>
     )
 }

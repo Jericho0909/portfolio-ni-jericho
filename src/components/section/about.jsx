@@ -11,7 +11,6 @@ const About = () => {
 
     useEffect(() => {
         if(isVisible){
-
             setActiveSection("about")
         }
     }, [isVisible])
@@ -21,7 +20,7 @@ const About = () => {
         <section
             ref={ref}
             id="about"
-            className={`flex items-center justify-center w-full h-[80svh] p-1 mb-4 scroll-mt-20 sm:scroll-mt-32 ${isSmallMobile && "scroll-mt-56"}`}
+            className={`flex items-center justify-center w-full h-[80svh] p-1 mb-4 scroll-mt-20 sm:scroll-mt-32 ${isSmallMobile && "scroll-mt-[13.50rem]"}`}
         >
             <motion.div 
                 initial={{ opacity: 0, y: 40 }}
@@ -32,10 +31,10 @@ const About = () => {
                     delay: 0.3, 
                     ease: "easeIn" 
                 }}
-                className="flex items-center justify-around flex-col w-full sm:w-[85%] lg:w-[70%] xl:w-[55%] h-auto p-3 border border-white"
+                className="flex items-center justify-around flex-col w-full sm:w-[85%] lg:w-[70%] xl:w-[55%] h-auto p-3"
             >
                 <h1 className="flex justify-start w-full text-white font-Htext font-medium text-[clamp(0.95rem,2vw,1.50rem)] border-b border-white p-3 mb-2">
-                    ABOUT ME
+                    ABOUT
                 </h1>
                 <div className="flex items-start justify-center flex-col sm:flex-row w-full p-2 gap-5 cursor-default mb-2">
                     <div className="relative w-full lg:w-[25rem] h-[13rem] sm:h-[12rem] rounded-xl overflow-hidden border border-white/10 shadow-[0_0_30px_rgba(0,150,255,0.15)]">

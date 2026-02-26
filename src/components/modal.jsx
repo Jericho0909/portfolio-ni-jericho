@@ -122,7 +122,7 @@ const Modal = ({ selectedProject, setSelectedProject }) => {
                                         href={link.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="px-5 py-2 rounded-xl bg-black text-white hover:bg-gray-800 transition"
+                                        className="px-5 py-2 rounded-xl bg-black text-white hoverable:hover:bg-gray-800 transition"
                                     >
                                     {link.label}
                                     </a>

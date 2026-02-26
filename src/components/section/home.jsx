@@ -10,11 +10,9 @@ import { MessageCircleMore } from 'lucide-react';
 const Home = () => {
     const { ref, isVisible } = useSectionInView()
     const { setActiveSection } = useContext(ActiveSectionContext)
-    const [ hasAnimeted, setHasAnimeted ] = useState(false)
 
     useEffect(() => {
         if(isVisible){
-            setHasAnimeted(true)
             setActiveSection("home")
         }
     }, [isVisible])

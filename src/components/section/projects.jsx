@@ -3,6 +3,7 @@ import ActiveSectionContext from "../../context/activeSectionContext"
 import WindowSizeContext from "../../context/windowSizeContext"
 import ModalContext from "../../context/modalContext"
 import useSectionInView from "../../usehooks/useSectionInView"
+import StackedCard from "../stackedCard,"
 import { motion } from "framer-motion"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Coffee } from 'lucide-react';
@@ -107,19 +108,43 @@ const Projects = ({setSelectedProject}) => {
 
     const [ items, setItems ] = useState(projectsArr)
 
-    const handleSwipe = () => {
-        setItems((prev) => {
-            const newArr = [...prev]
-            const first = newArr.shift()
-            newArr.push(first)
-            return newArr
-        })
-    }
-
     const handleOpenModal = (id) => {
         const project = projectsArr.find(project => project.id === id)
         setSelectedProject(project)
         toggleModal()
+    }
+
+    const CardContent = (card) => {
+        return(
+            <>
+                <div className="w-full h-[15rem] overflow-hidden rounded-md mb-4">
+                    <img
+                        src={card.image[0]}
+                        alt={`${card.title}-Image`}
+                        loading="lazy"
+                        className="w-full h-full object-fill transform group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                        style={{ userDrag: "none", WebkitUserDrag: "none" }}
+                    />
+                </div>
+                <div className="flex items-center mb-4  justify-center w-full gap-2">
+                    {card.icon.icon}
+                    <span
+                        className="font-Ptext font-bold text-gray-300"
+                    >
+                        {card.title}
+                    </span>
+                </div>
+                <div className="flex justify-center w-full">
+                    <button
+                        type="button"
+                        onClick={() => handleOpenModal(card.id)}
+                        className="flex items-center justify-center px-4 py-2 gap-2 text-base text-white border-x-2 border-Mcolor rounded-md w-[45%]"
+                    >
+                        View
+                    </button>
+                </div>
+            </>
+        )
     }
 
     useEffect(() => {
@@ -132,7 +157,7 @@ const Projects = ({setSelectedProject}) => {
         <section 
             ref={ref}
             id="projects"
-            className={`flex justify-center w-full h-[70svh] p-1 mb-4  scroll-mt-20 sm:scroll-mt-32 ${isSmallMobile && "scroll-mt-60"}`}
+            className={`flex justify-center w-full h-[80svh] p-1 mb-4  scroll-mt-20 sm:scroll-mt-32 ${isSmallMobile && "scroll-mt-40"}`}
         >
             <motion.div 
                 initial={{ opacity: 0, y: 40 }}
@@ -145,62 +170,18 @@ const Projects = ({setSelectedProject}) => {
                 }}
                 className="w-[90%] md:w-[80%] lg:w-[93%] h-full"
             >
-                <h1 className="flex justify-start text-white font-Htext font-medium text-[clamp(0.95rem,2vw,1.50rem)]  p-3 mb-2">
+                <h1 className="flex justify-start text-white font-Htext font-medium text-[clamp(0.95rem,2vw,1.50rem)] p-3 mb-2">
                     MY PROJECTS
                 </h1>
-                { stackedCard
+                {stackedCard
                     ? (
                         <div className="flex items-center justify-center w-full h-[90%]">
                             <div className="relative w-[300px] h-[400px] mx-auto">
-                                {items.map((card, index) => (
-                                    <motion.div
-                                        key={card.id}
-                                        drag={index === 0 ? "x" : false}       
-                                        dragConstraints={{ left: 0, right: 0 }}
-                                        dragElastic={0}                          
-                                        onDragEnd={(e, info) => {
-                                            if (index === 0 && Math.abs(info.offset.x) > 100) {
-                                            handleSwipe();
-                                            }
-                                        }}
-                                        initial={{ scale: 0.9, opacity: 0 }}
-                                        animate={{
-                                            scale: 1 - index * 0.05,
-                                            x: index === 0 ? 0 : index * 15,
-                                            opacity: 1,
-                                            zIndex: 10 - index
-                                        }}
-                                        transition={{ type: "spring", stiffness: 300 }}
-                                        className="flex justify-center flex-col absolute top-0 left-0 w-full h-full bg-black border border-white rounded-xl shadow-x cursor-grab p-2"
-                                    >
-                                        <div className="w-full h-[15rem] overflow-hidden rounded-md mb-4">
-                                            <img
-                                                src={card.image[0]}
-                                                alt={`${card.title}-Image`}
-                                                loading="lazy"
-                                                className="w-full h-full object-fill transform group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                                                style={{ userDrag: "none", WebkitUserDrag: "none" }}
-                                            />
-                                        </div>
-                                        <div className="flex items-center mb-4  justify-center w-full gap-2">
-                                            {card.icon.icon}
-                                            <span
-                                                className="font-Ptext font-bold text-gray-300"
-                                            >
-                                                {card.title}
-                                            </span>
-                                        </div>
-                                        <div className="flex justify-center w-full">
-                                            <button
-                                                type="button"
-                                                onClick={() => handleOpenModal(card.id)}
-                                                className="flex items-center justify-center px-4 py-2 gap-2 text-base text-white border-x-2 border-Mcolor rounded-md w-[45%]"
-                                            >
-                                                View
-                                            </button>
-                                        </div>
-                                    </motion.div>
-                                ))}
+                                <StackedCard
+                                    items={items}
+                                    setItems={setItems}
+                                    CardContent={CardContent}
+                                />
                             </div>
 
                         </div>
