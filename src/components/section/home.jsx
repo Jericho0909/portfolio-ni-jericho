@@ -1,5 +1,6 @@
-import { useState, useEffect, useContext } from "react"
+import { useEffect, useContext } from "react"
 import ActiveSectionContext from "../../context/activeSectionContext"
+import WindowSizeContext from "../../context/windowSizeContext"
 import useSectionInView from "../../usehooks/useSectionInView"
 import Jericho from "../../assets/img/jericho.webp"
 import { motion } from "framer-motion"
@@ -10,6 +11,7 @@ import { MessageCircleMore } from 'lucide-react';
 const Home = () => {
     const { ref, isVisible } = useSectionInView()
     const { setActiveSection } = useContext(ActiveSectionContext)
+    const { isSmallMobile } = useContext(WindowSizeContext)
 
     useEffect(() => {
         if(isVisible){
@@ -21,7 +23,7 @@ const Home = () => {
         <section 
             ref={ref}
             id="home"
-            className=" relative flex items-center justify-center flex-col-reverse lg:flex-row  w-full h-[92svh] p-1 mb-4"
+            className=" relative flex items-center justify-center flex-col-reverse lg:flex-row  w-full h-[85svh] p-1 mb-4"
         >
             <div className="flex items-start justify-center flex-col h-full ml-0 lg:ml-20 p-1 space-y-6 cursor-default">
 
@@ -145,23 +147,23 @@ const Home = () => {
                 </div>
             </motion.div>
             <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.5 }}
-                className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center cursor-pointer"
-                onClick={() => {
-                    document.getElementById('projects')
-                    .scrollIntoView({ behavior: 'smooth' })
-                }}
-            >
-                <div className="w-6 h-10 border-2 border-Mcolor rounded-full flex justify-center">
-                    <motion.div
-                    animate={{ y: [0, 10, 0] }}
-                    transition={{ repeat: Infinity, duration: 1.5 }}
-                    className="w-2 h-2 bg-Mcolor rounded-full mt-2"
-                    />
-                </div>
-            </motion.div>
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.5 }}
+                    className="absolute top-1/2 right-8 -translate-y-1/2 lg:top-auto lg:right-auto lg:bottom-8 lg:left-1/2 lg:-translate-x-1/2 flex flex-col items-center cursor-pointer"
+                    onClick={() => {
+                        document.getElementById('projects')
+                        .scrollIntoView({ behavior: 'smooth' })
+                    }}
+                >
+                    <div className="w-6 h-10 border-2 border-Mcolor rounded-full flex justify-center">
+                        <motion.div
+                        animate={{ y: [0, 10, 0] }}
+                        transition={{ repeat: Infinity, duration: 1.5 }}
+                        className="w-2 h-2 bg-Mcolor rounded-full mt-2"
+                        />
+                    </div>
+                </motion.div>
         </section>
     )
 }

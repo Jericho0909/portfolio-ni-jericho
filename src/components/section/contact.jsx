@@ -66,7 +66,7 @@ const Contact = () => {
         <motion.section 
             ref={ref}
             id="contact"
-            className={`flex items-center justify-center w-full h-[100svh] p-1 scroll-mt-20 sm:scroll-mt-32 ${isSmallMobile && "scroll-mt-[13.50rem]"}`}
+            className={`flex items-start justify-center w-full h-[85svh] p-1 scroll-mt-20 sm:scroll-mt-32 ${isSmallMobile && "scroll-mt-[13.50rem]"}`}
         >
             <motion.div 
                 initial={{ opacity: 0, y: 40 }}
