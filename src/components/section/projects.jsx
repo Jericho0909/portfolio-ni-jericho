@@ -30,7 +30,7 @@ const Projects = ({setSelectedProject}) => {
         {
             id: 1,
             title: "Kape Shop Ni Jericho",
-            description: "A modern coffee ordering app with responsive UI and smooth animations.",
+            description: "A full-stack coffee shop management system with order monitoring, inventory tracking, and role-based admin controls. Includes admin and customer interfaces, Firebase authentication, and real-time database integration.",
             image: [
                 C1img,
                 C2img,
@@ -55,7 +55,7 @@ const Projects = ({setSelectedProject}) => {
         {
             id: 2,
             title: "Play4pot",
-            description: "An interactive competition platform where users can join matches and track game results through a responsive and modern interface.",
+            description: "A betting management system for 1v1 basketball matches with admin-controlled match setup and bet monitoring. Users can place bets using verified accounts and receive confirmations.",
             image: [
                 P1img,
                 P2img,
@@ -81,7 +81,7 @@ const Projects = ({setSelectedProject}) => {
         {
             id: 3,
             title: "Ma Anong Ulam",
-            description: "A meal suggestion web application that helps users decide what to cook by browsing and exploring various food options. Designed with a responsive interface and structured data handling for a smooth user experience.",
+            description: "A recipe search and filtering web application that enables users to find dishes by name or ingredients. Implemented dynamic search functionality.",
             image: [
                 M1img,
                 M2img,
@@ -122,7 +122,7 @@ const Projects = ({setSelectedProject}) => {
                         src={card.image[0]}
                         alt={`${card.title}-Image`}
                         loading="lazy"
-                        className="w-full h-full object-fill transform group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                        className="w-full h-full object-fill transform hoverable:group-hover:scale-105 transition-transform duration-500 ease-in-out"
                         style={{ userDrag: "none", WebkitUserDrag: "none" }}
                     />
                 </div>
@@ -191,7 +191,7 @@ const Projects = ({setSelectedProject}) => {
                             {projectsArr.map((project, index) => (
                                 <div
                                     key={index}
-                                    className="group flex flex-col justify-between p-4 border-2 border-white rounded-xl bg-black/20 hover:border-orange-500 transition-all duration-300"
+                                    className="group flex flex-col justify-between p-4 border-2 border-white rounded-xl bg-black/20 transition-all duration-300 hoverable:hover:border-Mcolor hoverable:hover:bg-orange-500/10 hoverable:hover:shadow-[0_0_15px_rgba(255,165,0,0.5)]"
                                     >
                                     <div className="w-full h-[15rem] overflow-hidden rounded-md mb-4">
                                         <img

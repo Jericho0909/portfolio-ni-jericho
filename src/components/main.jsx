@@ -14,13 +14,13 @@ const Main = ({setSelectedProject}) => {
             <Home/>
             <div className={`w-full h-[13svh] ${isSmallMobile && "h-[30svh]" }`}></div>
             <About/>
-            <div className={`w-full h-[13svh] ${isSmallMobile && "h-[5svh]" }`}></div>
+            <div className={`w-full h-[13svh] ${isSmallMobile && "h-[30svh]" }`}></div>
             <Projects
                 setSelectedProject={setSelectedProject}
             />
-            <div className={`w-full h-[13svh] ${isSmallMobile && "h-[5svh]" }`}></div>
+            <div className={`w-full h-[13svh] ${isSmallMobile && "h-[30svh]" }`}></div>
             <TechStack/>
-            <div className={`w-full h-[13svh] ${isSmallMobile && "h-[5svh]" }`}></div>
+            <div className={`w-full h-[13svh] ${isSmallMobile && "h-[30svh]" }`}></div>
             <Contact/>
         </main>
     )

@@ -1,6 +1,5 @@
 import { useEffect, useContext } from "react"
 import ActiveSectionContext from "../../context/activeSectionContext"
-import WindowSizeContext from "../../context/windowSizeContext"
 import useSectionInView from "../../usehooks/useSectionInView"
 import Jericho from "../../assets/img/jericho.webp"
 import { motion } from "framer-motion"
@@ -8,10 +7,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReact } from "@fortawesome/free-brands-svg-icons";
 import { Rocket } from 'lucide-react';
 import { MessageCircleMore } from 'lucide-react';
+import { TypeAnimation } from "react-type-animation";
 const Home = () => {
     const { ref, isVisible } = useSectionInView()
     const { setActiveSection } = useContext(ActiveSectionContext)
-    const { isSmallMobile } = useContext(WindowSizeContext)
 
     useEffect(() => {
         if(isVisible){
@@ -25,7 +24,7 @@ const Home = () => {
             id="home"
             className=" relative flex items-center justify-center flex-col-reverse lg:flex-row  w-full h-[85svh] p-1 mb-4"
         >
-            <div className="flex items-start justify-center flex-col h-full ml-0 lg:ml-20 p-1 space-y-6 cursor-default">
+            <div className="flex items-start justify-center flex-col w-full h-full ml-0 lg:ml-20 p-1 space-y-6 cursor-default">
 
                 <motion.h1 
                     initial={{ x: -60, opacity: 0 }}
@@ -35,10 +34,15 @@ const Home = () => {
                         delay: 0.2, 
                         ease: "easeIn" 
                     }}
-                    className="text-Mcolor font-Htext font-bold text-[clamp(3rem,5vw,8rem)] leading-tight">
+                    className="text-Mcolor font-Htext font-bold text-[clamp(2.75rem,5vw,8rem)] leading-tight whitespace-nowrap">
                     Hi, I'm
-                    <span className="bg-gradient-to-r from-orange-500 to-yellow-400 bg-clip-text text-transparent pl-6 drop-shadow-[0_0_8px_rgba(255,165,0,0.35)]">
-                        Jericho Zara
+                    <span className="bg-gradient-to-r from-orange-500 to-yellow-400 bg-clip-text text-transparent pl-4 drop-shadow-[0_0_8px_rgba(255,165,0,0.35)]">
+                        <TypeAnimation
+                            sequence={["Jericho Zara", 1800, "", 500]}
+                            speed={80}
+                            cursor={true} 
+                            repeat={Infinity}
+                        />
                     </span>
                 </motion.h1>
 

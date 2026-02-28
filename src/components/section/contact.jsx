@@ -10,6 +10,7 @@ import {
     faGithub,
     faLinkedin
 } from "@fortawesome/free-brands-svg-icons";
+import toast from "react-hot-toast";
 
 const Contact = () => {
     const { ref, isVisible } = useSectionInView()
@@ -49,12 +50,26 @@ const Contact = () => {
         }
     ]
 
-    const sendEmail = (e) => {
+    const sendEmail = async (e) => {
         e.preventDefault()
         setIsLoading(true)
-        ContactMe(email, message, setIsLoading)
-        setEmail("")
-        setMessage("")
+
+        const loadingToast = toast.loading("Sending message...");
+
+        try {
+            await ContactMe(email, message)
+            setIsLoading(false)
+            setEmail("")
+            setMessage("")
+            toast.dismiss(loadingToast)
+            toast.success("Email sent successfully!")
+        } catch (error) {
+            toast.dismiss(loadingToast);
+            toast.error("Failed to send email")
+            console.error(error)
+        } finally {
+            setIsLoading(false)
+        }
     }
 
     useEffect(() => {
@@ -66,7 +81,7 @@ const Contact = () => {
         <motion.section 
             ref={ref}
             id="contact"
-            className={`flex items-start justify-center w-full h-[85svh] p-1 scroll-mt-20 sm:scroll-mt-32 ${isSmallMobile && "scroll-mt-[13.50rem]"}`}
+            className={`flex items-start justify-center w-full h-auto p-1 scroll-mt-20 sm:scroll-mt-32 ${isSmallMobile && "scroll-mt-[13.50rem]"}`}
         >
             <motion.div 
                 initial={{ opacity: 0, y: 40 }}

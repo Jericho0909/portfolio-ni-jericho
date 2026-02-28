@@ -6,6 +6,7 @@ import Main from "../components/main"
 import Footer from "../components/footer"
 import Modal from "../components/modal"
 import { AnimatePresence } from "framer-motion"
+import { Toaster } from "react-hot-toast";
 const PortfolioPage = () => {
     const { isOpen } = useContext(ModalContext)
     const { isSmallMobile } = useContext(WindowSizeContext)
@@ -37,7 +38,7 @@ const PortfolioPage = () => {
 
     return(
         <>  
-
+            <Toaster position="bottom-center" reverseOrder={false} />
             <Header
                 handleScrollToSection={handleScrollToSection}
             />
