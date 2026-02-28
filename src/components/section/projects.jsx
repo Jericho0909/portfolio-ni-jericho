@@ -175,15 +175,17 @@ const Projects = ({setSelectedProject}) => {
                 </h1>
                 {stackedCard
                     ? (
-                        <div className="flex items-center justify-center w-full h-[90%]">
-                            <div className="relative w-[300px] h-[400px] mx-auto">
+                        <div className="flex items-center justify-center w-full h-[90%] flex-col">
+                            <div className="relative w-[300px] h-[400px] mx-auto mb-4">
                                 <StackedCard
                                     items={items}
                                     setItems={setItems}
                                     CardContent={CardContent}
                                 />
                             </div>
-
+                            <p className="text-white font-Ptext text-base">
+                                Swipe to Right
+                            </p>
                         </div>
                     )
                     : (
@@ -213,7 +215,7 @@ const Projects = ({setSelectedProject}) => {
                                         <button
                                             type="button"
                                             onClick={() => handleOpenModal(project.id)}
-                                            className="flex items-center justify-center px-4 py-2 gap-2 font-Htext font-semibold text-base text-white border-x-2 border-Mcolor rounded-md w-[45%] hover:bg-orange-500 hover:border-orange-500 hover:text-black transition-all duration-300"
+                                            className="flex items-center justify-center px-4 py-2 gap-2 font-Htext font-semibold text-base text-white border-x-2 border-Mcolor rounded-md w-[45%] hoverable:hover:bg-orange-500 hoverable:hover:border-orange-500 hover:text-black transition-all duration-300"
                                         >
                                             View
                                         </button>

@@ -26,6 +26,7 @@ const TechStack = () => {
 
     const techStackArr = [
         {
+            id: 1,
             category: "FrontEnd",
             items: [
                 {
@@ -86,6 +87,7 @@ const TechStack = () => {
             color: "border-blue-600"
         },
         {
+            id: 2,
             category: "BackEnd",
             items: [
                 {
@@ -98,6 +100,7 @@ const TechStack = () => {
             color: "border-green-600"
         },
         {
+            id: 3,
             category: "Tools",
             items: [
                 {
@@ -197,14 +200,17 @@ const TechStack = () => {
                 </h1>
                 {stackedCard
                     ? (
-                        <div className="flex items-center justify-center w-full h-[90%]">
-                            <div className="relative w-[300px] h-[400px] mx-auto">
+                        <div className="flex items-center justify-center w-full h-[90%] flex-col">
+                            <div className="relative w-[300px] h-[400px] mx-auto mb-4">
                                 <StackedCard
                                     items={items}
                                     setItems={setItems}
                                     CardContent={CardContent}
                                 />
                             </div>
+                            <p className="text-white font-Ptext text-base">
+                                Swipe to Right
+                            </p>
                         </div>
                     )
                     : (
