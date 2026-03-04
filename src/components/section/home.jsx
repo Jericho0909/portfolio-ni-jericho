@@ -112,7 +112,7 @@ const Home = () => {
                     </button>
 
                     <a
-                        href="Jericho D Zara.pdf"
+                        href="/Jericho D Zara.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center px-6 py-3 gap-2 text-base text-white border-x-2  border-Mcolor rounded-md transition-transform duration-300 hover:scale-105 focus:outline-none"
