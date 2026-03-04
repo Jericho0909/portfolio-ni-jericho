@@ -4,9 +4,14 @@ import useSectionInView from "../../usehooks/useSectionInView"
 import Jericho from "../../assets/img/jericho.webp"
 import { motion } from "framer-motion"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faReact } from "@fortawesome/free-brands-svg-icons";
-import { Rocket } from 'lucide-react';
-import { MessageCircleMore } from 'lucide-react';
+import { 
+    faReact,
+    faGithub
+} from "@fortawesome/free-brands-svg-icons";
+import { 
+    Rocket,
+    Eye,
+} from 'lucide-react';
 import { TypeAnimation } from "react-type-animation";
 const Home = () => {
     const { ref, isVisible } = useSectionInView()
@@ -22,7 +27,7 @@ const Home = () => {
         <section 
             ref={ref}
             id="home"
-            className=" relative flex items-center justify-center flex-col-reverse lg:flex-row  w-full h-[85svh] p-1 mb-4"
+            className=" relative flex items-center justify-center gap-10 sm:gap-0 flex-col-reverse lg:flex-row  w-full h-auto sm:h-[85svh] p-1 mb-4"
         >
             <div className="flex items-start justify-center flex-col w-full h-full ml-0 lg:ml-20 p-1 space-y-6 cursor-default">
 
@@ -86,7 +91,7 @@ const Home = () => {
                         delay: 0.8, 
                         ease: "easeIn" 
                     }}
-                    className="flex  justify-center lg:justify-start gap-8 pt-4 w-full"
+                    className="flex items-start justify-between sm:justify-start flex-col sm:flex-row gap-5 sm:gap-8 w-full p-1 flex-wrap"
                 >
 
                     <button
@@ -106,21 +111,35 @@ const Home = () => {
 
                     </button>
 
-                    <button
-                        onClick={() => {
-                            document.getElementById('contact')
-                            .scrollIntoView({ behavior: 'smooth', block: 'center' })
-                        }}
+                    <a
+                        href="public/Jericho D Zara.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="flex items-center px-6 py-3 gap-2 text-base text-white border-x-2  border-Mcolor rounded-md transition-transform duration-300 hover:scale-105 focus:outline-none"
                     >
                         <span>
-                            Let's Talk
+                            View My Resume
                         </span>
-                        <MessageCircleMore
+                        <Eye
                             size={18}
                             color={"#EA5A0B"}
                         />
-                    </button>
+                    </a>
+
+                    <a
+                        href="https://github.com/Jericho0909"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center px-6 py-3 gap-2 text-base text-white border-x-2  border-Mcolor rounded-md transition-transform duration-300 hover:scale-105 focus:outline-none"
+                    >
+                        <span>
+                            GitHub
+                        </span>
+                        <FontAwesomeIcon
+                            icon={faGithub}
+                            className="text-lg text-Mcolor"
+                        />
+                    </a>
 
                 </motion.div>
             </div>
@@ -154,7 +173,7 @@ const Home = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1.5 }}
-                    className="absolute top-1/2 right-8 -translate-y-1/2 lg:top-auto lg:right-auto lg:bottom-8 lg:left-1/2 lg:-translate-x-1/2 flex flex-col items-center cursor-pointer"
+                    className="absolute top-2/2 right-8 -translate-y-1/2 lg:top-auto lg:right-auto lg:bottom-8 lg:left-1/2 lg:-translate-x-1/2 flex flex-col items-center cursor-pointer"
                     onClick={() => {
                         document.getElementById('projects')
                         .scrollIntoView({ behavior: 'smooth' })

@@ -5,10 +5,9 @@ import ModalContext from "../../context/modalContext"
 import useSectionInView from "../../usehooks/useSectionInView"
 import StackedCard from "../stackedCard,"
 import { motion } from "framer-motion"
+import { Coffee, CookingPot } from 'lucide-react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Coffee } from 'lucide-react';
 import { faBasketball } from "@fortawesome/free-solid-svg-icons";
-import { CookingPot } from 'lucide-react';
 import C1img from "../../assets/img/c1web.webp"
 import C2img from "../../assets/img/c2web.webp"
 import C3img from "../../assets/img/c3web.webp"
@@ -134,14 +133,25 @@ const Projects = ({setSelectedProject}) => {
                         {card.title}
                     </span>
                 </div>
-                <div className="flex justify-center w-full">
+                <div className="flex items-center justify-between p-1 w-full">
                     <button
                         type="button"
                         onClick={() => handleOpenModal(card.id)}
-                        className="flex items-center justify-center px-4 py-2 gap-2 text-base text-white border-x-2 border-Mcolor rounded-md w-[45%]"
+                        className="flex items-center justify-center px-4 py-2 gap-2 font-Htext font-semibold text-xs text-white border-x-2 border-Mcolor rounded-md hoverable:hover:bg-Mcolor hoverable:hover:border-Mcolor hover:text-black transition-all duration-300"
                     >
                         View
                     </button>
+                    {card.links.map((link, index) => (
+                        <a
+                            key={index}
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xs font-semibold px-5 py-2 rounded-xl bg-black text-white hoverable:hover:bg-gray-800 transition"
+                        >
+                            {link.label}
+                        </a>
+                    ))}
                 </div>
             </>
         )
@@ -193,7 +203,7 @@ const Projects = ({setSelectedProject}) => {
                             {projectsArr.map((project, index) => (
                                 <div
                                     key={index}
-                                    className="group flex flex-col justify-between p-4 border-2 border-white rounded-xl bg-black/20 transition-all duration-300 hoverable:hover:border-Mcolor hoverable:hover:bg-orange-500/10 hoverable:hover:shadow-[0_0_15px_rgba(255,165,0,0.5)]"
+                                    className="group flex flex-col justify-between p-4 border-2 border-white rounded-xl bg-black/20 transition-all duration-300 hoverable:hover:border-Mcolor hoverable:hover:shadow-[0_0_15px_rgba(255,165,0,0.5)]"
                                     >
                                     <div className="w-full h-[15rem] overflow-hidden rounded-md mb-4">
                                         <img
@@ -206,19 +216,30 @@ const Projects = ({setSelectedProject}) => {
                                     <div className="flex items-center mb-4  justify-center w-full gap-2">
                                         {project.icon.icon}
                                         <span
-                                            className="font-Htext font-bold text-gray-300 group-hover:text-orange-500 truncate text-lg"
+                                            className="font-Htext font-bold text-gray-300 group-hover:text-Mcolor truncate text-lg"
                                         >
                                             {project.title}
                                         </span>
                                     </div>
-                                    <div className="flex justify-center w-full">
+                                    <div className="flex items-center justify-between p-1 w-full">
                                         <button
                                             type="button"
                                             onClick={() => handleOpenModal(project.id)}
-                                            className="flex items-center justify-center px-4 py-2 gap-2 font-Htext font-semibold text-base text-white border-x-2 border-Mcolor rounded-md w-[45%] hoverable:hover:bg-orange-500 hoverable:hover:border-orange-500 hover:text-black transition-all duration-300"
+                                            className="flex items-center justify-center px-4 py-2 gap-2 font-Htext font-semibold text-xs text-white border-x-2 border-Mcolor rounded-md hoverable:hover:bg-Mcolor hoverable:hover:border-Mcolor hover:text-black transition-all duration-300"
                                         >
                                             View
                                         </button>
+                                        {project.links.map((link, index) => (
+                                            <a
+                                                key={index}
+                                                href={link.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-xs font-semibold px-5 py-2 rounded-xl bg-black text-white hoverable:hover:bg-gray-800 transition"
+                                            >
+                                                {link.label}
+                                            </a>
+                                        ))}
                                     </div>
                                 </div>
 

@@ -15,7 +15,7 @@ const Modal = ({ selectedProject, setSelectedProject }) => {
             setIndex((prev) => (prev + 1) % selectedProject.image.length)
         }, 3000)
 
-            return () => clearInterval(interval)
+        return () => clearInterval(interval)
     }, [])
 
     useEffect(() => {
@@ -105,7 +105,7 @@ const Modal = ({ selectedProject, setSelectedProject }) => {
                             <p className="text-gray-400 font-Htext font-medium text-[clamp(0.85rem,1.5vw,1rem)] mb-4">
                                 {selectedProject.description}
                             </p>
-                            <div className="flex flex-wrap gap-3 mb-4">
+                            <div className="flex flex-wrap gap-4">
                                 {selectedProject.techStack.map((stack, index) => (
                                     <span
                                         key={index}
@@ -115,19 +115,7 @@ const Modal = ({ selectedProject, setSelectedProject }) => {
                                     </span>
                                 ))}
                             </div>
-                            <div className="flex items-center justify-center w-full gap-3 mt-8">
-                                {selectedProject.links.map((link, index) => (
-                                    <a
-                                        key={index}
-                                        href={link.url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="px-5 py-2 rounded-xl bg-black text-white hoverable:hover:bg-gray-800 transition"
-                                    >
-                                    {link.label}
-                                    </a>
-                                ))}
-                            </div>
+                            
                         </div>
                     </div>
                 </div>

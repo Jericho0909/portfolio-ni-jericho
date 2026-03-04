@@ -100,23 +100,24 @@ const Contact = () => {
                 <div className="flex flex-col w-full h-auto p-2">
                     <div className="flex items-center justify-around w-full gap-2 sm:p-2">
                         {PlatForms.map((item) => (
-                            <div
+                            <a  
                                 key={item.id}
+                                href={item.contact}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="group flex items-center justify-center w-[7rem] sm:w-[10rem] h-16 gap-2 rounded-xl border border-white/20 transition-all duration-300 mb-3 hoverable:hover:border-Mcolor hoverable:hover:bg-orange-500/10 hoverable:hover:shadow-[0_0_15px_rgba(255,165,0,0.5)]"
                                 >
                                 <span className="text-gray-400 group-hoverable:hover:text-orange-400 transition-all duration-300">
                                     {item.icon}
                                 </span>
 
-                                <a
-                                    href={item.contact}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                <span
+                                    
                                     className="text-gray-300 group-hoverable:hover:text-white transition-colors duration-300"
                                 >
                                     {item.socialName}
-                                </a>
-                            </div>
+                                </span>
+                            </a>
                         ))}
                     </div>
                     <form
