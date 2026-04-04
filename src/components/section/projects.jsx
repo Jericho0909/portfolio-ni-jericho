@@ -35,7 +35,7 @@ const Projects = ({setSelectedProject}) => {
                 C2img,
                 C3img
             ],
-            techStack: ["React", "Tailwind", "Framer Motion", "Firebase"],
+            techStack: ["React", "Tailwind", "Farmer Motion", "Firebase"],
             links: [
                 { 
                     label: "Live Demo", 
@@ -61,7 +61,7 @@ const Projects = ({setSelectedProject}) => {
                 P3img
 
             ],
-            techStack: ["React", "TypeScript", "Tailwind", "Framer Motion", "Firebase"],
+            techStack: ["React", "TypeScript", "Tailwind", "Farmer Motion", "Firebase"],
             links: [
                 { 
                     label: "Live Demo", 
@@ -86,7 +86,7 @@ const Projects = ({setSelectedProject}) => {
                 M2img,
                 M3img
             ],
-            techStack: ["React", "TypeScript", "Tailwind", "Framer Motion", "Firebase"],
+            techStack: ["React", "TypeScript", "Tailwind", "Farmer Motion", "Firebase"],
             links: [
                 { 
                     label: "Live Demo", 
