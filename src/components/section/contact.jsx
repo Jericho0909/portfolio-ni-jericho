@@ -24,7 +24,7 @@ const Contact = () => {
         {
             id: 1,
             socialName: "Email",
-            contact: "mailto:jerichozara.tmlcr@gmail.com",
+            contact: "mailto:jerichozara.dev@gmail.com",
             icon: <FontAwesomeIcon
                 icon={faEnvelope}
                 className="text-2xl text-white"
