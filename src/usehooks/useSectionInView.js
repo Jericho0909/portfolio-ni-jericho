@@ -2,7 +2,7 @@
  
 const useSectionInView = () => {
     const [ ref, entry ] = useIntersectionObserver({
-        threshold: 0.5,
+        threshold: 0.2,
         root: null,
         rootMargin: "0px",
     })
