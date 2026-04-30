@@ -1,4 +1,4 @@
- import { useIntersectionObserver } from "@uidotdev/usehooks";
+import { useIntersectionObserver } from "@uidotdev/usehooks";
  
 const useSectionInView = () => {
     const [ ref, entry ] = useIntersectionObserver({

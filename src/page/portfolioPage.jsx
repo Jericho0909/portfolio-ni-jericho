@@ -16,7 +16,7 @@ const PortfolioPage = () => {
     const handleScrollToSection = (id) => {
         const sectionId = document.getElementById(id)
         if(sectionId){
-            sectionId.scrollIntoView({behavior: 'smooth', block: isSmallMobile ? 'start' : 'center'})
+            sectionId.scrollIntoView({behavior: 'smooth', block: isSmallMobile ? 'start' : 'start'})
         }
         else{
             return

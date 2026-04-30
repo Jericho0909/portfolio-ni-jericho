@@ -53,12 +53,12 @@ const About = ({ children }) => {
                                 src={CodeImg}
                                 alt="Coding setup preview"
                                 loading="lazy"
-                                className="w-[50%] h-full object-fill rounded-xl"
+                                className="w-full sm:w-[50%] h-full object-fill rounded-xl"
                             />   
                         </div>
                     </div>
                     <div className="flex items-center flex-col p-1">
-                        <div className="mb-4 w-[70%]">
+                        <div className="mb-4 w-full sm:w-[70%]">
                             <h2 className="text-gray-400 font-Htext italic mb-2 font-medium text-[clamp(0.90rem,1.5vw,1rem)]">
                                 While others focus on how things look, I focus on how they feel.
                             </h2>
