@@ -31,14 +31,7 @@ const About = ({ children }) => {
             className={`w-full h-auto p-1 mb-4 gap-4 scroll-mt-20 sm:scroll-mt-32 ${stackedCard ? "grid grid-cols-1" : "grid grid-cols-2"}  ${isSmallMobile && "scroll-mt-[13.50rem]"}`}
         >
             <motion.div 
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ 
-                    duration: 0.8, 
-                    delay: 0.3, 
-                    ease: "easeIn" 
-                }}
+                
                 className={`flex items-start flex-col w-full bg-white/5 backdrop-blur-md rounded-xl border border-white/10
                     ${stackedCard ? "h-auto" : "p-3 sticky top-36  h-[76svh]"}
                 `}

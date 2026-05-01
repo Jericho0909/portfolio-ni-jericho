@@ -167,87 +167,95 @@ const Projects = ({setSelectedProject}) => {
         <section 
             ref={ref}
             id="projects"
-            className={`flex justify-center w-full h-[80svh] p-1 mb-4  scroll-mt-20 sm:scroll-mt-32 ${isSmallMobile && "scroll-mt-40"}`}
+            className={`flex justify-center w-full h-auto p-1 mb-4  scroll-mt-20 sm:scroll-mt-32 ${isSmallMobile && "scroll-mt-40"}`}
         >
             <motion.div 
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ 
-                    duration: 0.8, 
-                    delay: 0.3, 
-                    ease: "easeIn" 
-                }}
                 className="w-[90%] md:w-[80%] lg:w-[93%] h-full"
             >
                 <h1 className="flex justify-start text-white font-Htext font-medium text-[clamp(0.95rem,2vw,1.50rem)] p-3 mb-2">
                     MY PROJECTS
                 </h1>
-                {stackedCard
-                    ? (
-                        <div className="flex items-center justify-center w-full h-[90%] flex-col">
-                            <div className="relative w-[300px] h-[400px] mx-auto mb-4">
-                                <StackedCard
-                                    items={items}
-                                    setItems={setItems}
-                                    CardContent={CardContent}
-                                />
-                            </div>
-                            <p className="text-white font-Ptext text-base">
-                                Swipe to Right
-                            </p>
-                        </div>
-                    )
-                    : (
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 w-full p-2 gap-4">
-                            {projectsArr.map((project, index) => (
-                                <div
-                                    key={index}
-                                    className="group flex flex-col justify-between p-4 border-2 border-white rounded-xl bg-black/20 transition-all duration-300 hoverable:hover:border-Mcolor hoverable:hover:shadow-[0_0_15px_rgba(255,165,0,0.5)]"
-                                    >
-                                    <div className="w-full h-[15rem] overflow-hidden rounded-md mb-4">
-                                        <img
-                                            src={project.image[0]}
-                                            alt={`${project.title}-Image`}
-                                            loading="lazy"
-                                            className="w-full h-full object-fill transform group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                                        />
-                                    </div>
-                                    <div className="flex items-center mb-4  justify-center w-full gap-2">
-                                        {project.icon.icon}
-                                        <span
-                                            className="font-Htext font-bold text-gray-300 group-hover:text-Mcolor truncate text-lg"
-                                        >
-                                            {project.title}
-                                        </span>
-                                    </div>
-                                    <div className="flex items-center justify-between p-1 w-full">
-                                        <button
-                                            type="button"
-                                            onClick={() => handleOpenModal(project.id)}
-                                            className="flex items-center justify-center px-4 py-2 gap-2 font-Htext font-semibold text-xs text-white border-x-2 border-Mcolor rounded-md hoverable:hover:bg-Mcolor hoverable:hover:border-Mcolor hover:text-black transition-all duration-300"
-                                        >
-                                            View
-                                        </button>
-                                        {project.links.map((link, index) => (
-                                            <a
-                                                key={index}
-                                                href={link.url}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="text-xs font-semibold px-5 py-2 rounded-xl bg-black text-white hoverable:hover:bg-gray-800 transition"
-                                            >
-                                                {link.label}
-                                            </a>
-                                        ))}
-                                    </div>
+                <div className="w-full p-2">
+                    {projectsArr.map((project, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ 
+                                duration: 0.6, 
+                                delay: 0.2, 
+                                ease: "easeIn" 
+                            }}
+                            className="flex items-center w-full p-4 mb-10 gap-4 bg-[#0a0a0a] border border-white/15 rounded-xl shadow-lg shadow-black/40 transition-all duration-300 hoverable:hover:border-[#EA5A0B] hoverable: hover:shadow-[0_0_20px_rgba(234,90,11,0.35)]"
+                        >
+                            <div className="w-full p-1">
+                                <div className="w-full rounded-xl overflow-hidden">
+                                    <img
+                                        src={project.image[0]}
+                                        alt="projectImg"
+                                        loading="lazy"
+                                        className="w-full object-contain"
+                                    />
                                 </div>
-
-
-                            ))}
-                        </div>
-                    )
-                }
+                            </div>
+                            <div className="flex items-center justify-center flex-col w-full p-1">
+                                <div className="flex items-center w-full overflow-hidden rounded-xl gap-2 mb-4">
+                                    {project.image.map((img, index) => (
+                                        (index !== 0 && (
+                                            <div
+                                                key={index}
+                                                className="w-full h-[13rem]"
+                                                >
+                                                <img
+                                                    src={img}
+                                                    alt="projectImg"
+                                                    loading="lazy"
+                                                    className="w-full h-full object-fill"
+                                                />
+                                            </div>
+                                        ))
+                                    ))}
+                                </div>
+                                <div className="flex items-center mb-4  justify-center w-full gap-2">
+                                    {project.icon.icon}
+                                    <span
+                                        className="text-2xl font-Htext font-bold text-gray-300"
+                                    >
+                                        {project.title}
+                                    </span>
+                                </div>
+                                <p className="text-gray-400 font-Htext font-medium text-[clamp(0.90rem,1.5vw,1.10rem)] mb-4">
+                                    {project.description}
+                                </p>
+                                <div className="flex items-start flex-wrap w-full gap-4 mb-2">
+                                    {project.techStack.map((stack, index) => (
+                                        <span
+                                            key={index}
+                                            className="w-auto p-1 font-Ptext font-medium text-[clamp(0.90rem,1.5vw,1.05rem)] text-white border-b-2 border-Mcolor cursor-pointer"
+                                        >
+                                            {stack}
+                                        </span>
+                                    ))}
+                                </div>
+                                <div className="flex justify-end w-full gap-3">
+                                    {project.links.map((link, index) => (
+                                        <a
+                                            key={index}
+                                            href={link.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-xs font-semibold px-5 py-2
+                                            rounded-xl bg-black text-white hoverable:hover:bg-gray-800 transition"
+                                        >
+                                            {link.label}
+                                        </a>
+                                    ))}
+                                </div>
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
             </motion.div>
         </section>
     )
