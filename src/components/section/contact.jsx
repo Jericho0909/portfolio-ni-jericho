@@ -78,26 +78,29 @@ const Contact = () => {
         }
     }, [isVisible])
     return(
-        <motion.section 
+        <section 
             ref={ref}
             id="contact"
             className={`flex items-start justify-center w-full h-auto p-1 scroll-mt-20 sm:scroll-mt-32 ${isSmallMobile && "scroll-mt-[13.50rem]"}`}
         >
-            <motion.div 
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ 
-                    duration: 0.8, 
-                    delay: 0.3, 
-                    ease: "easeIn" 
-                }}
+            <div 
+                
                 className="flex items-center justify-around flex-col w-full h-auto sm:w-[85%] lg:w-[70%] xl:w-[55%] p-3"
             >
                 <h1 className="flex justify-start w-full text-white font-Htext font-medium text-[clamp(0.95rem,2vw,1.50rem)] border-b border-white p-3 mb-2">
                     CONTACT
                 </h1>
-                <div className="flex flex-col w-full h-auto p-2">
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ 
+                        duration: 0.8, 
+                        delay: 0.3, 
+                        ease: "easeIn" 
+                    }}
+                    className="flex flex-col w-full h-auto p-2"
+                >
                     <div className="flex items-center justify-around w-full gap-2 sm:p-2">
                         {PlatForms.map((item) => (
                             <a  
@@ -133,7 +136,7 @@ const Contact = () => {
                         <input
                             id="email"
                             type="email"
-                            placeholder="example@gmail.com"
+                            placeholder="recruiter@gmail.com"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             className="w-full px-4 py-2 bg-black border border-gray-600 rounded-lg text-white font-Ptext mb-4 placeholder-gray-500 outline-none transition-all duration-300 focus:border-Mcolor focus:ring-2 focus:ring-orange-500/10"
@@ -161,10 +164,10 @@ const Contact = () => {
                             </div>
                         )}
                     </form>
-                </div>
-            </motion.div>
+                </motion.div>
+            </div>
             
-        </motion.section>
+        </section>
     )
 }
 

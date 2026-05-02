@@ -182,51 +182,55 @@ const TechStack = () => {
         <section 
             ref={ref}
             id="techstack"
-            className={`flex justify-center w-full h-[70svh] p-1 mb-4  scroll-mt-20 sm:scroll-mt-32 ${isSmallMobile && "scroll-mt-40"}`}
+            className={`flex justify-center w-full h-auto p-1 mb-4  scroll-mt-20 sm:scroll-mt-32 ${isSmallMobile && "scroll-mt-40"}`}
         >
-            <motion.div 
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ 
-                    duration: 0.8, 
-                    delay: 0.3, 
-                    ease: "easeIn" 
-                }}
-                className="w-[90%] md:w-[80%] lg:w-[93%] h-full"
+            <div 
+                className="w-full p-1"
             >
-                <h1 className="flex justify-start text-white font-Htext font-medium text-[clamp(0.95rem,2vw,1.50rem)]  p-3 mb-2">
+                <h1 className="flex justify-start text-white font-Htext font-medium text-[clamp(0.95rem,2vw,1.50rem)] p-3 mb-2">
                     TECHSTACK
                 </h1>
-                {stackedCard
-                    ? (
-                        <div className="flex items-center justify-center w-full h-[90%] flex-col">
-                            <div className="relative w-[300px] h-[400px] mx-auto mb-4">
-                                <StackedCard
-                                    items={items}
-                                    setItems={setItems}
-                                    CardContent={CardContent}
-                                />
-                            </div>
-                            <p className="text-white font-Ptext text-base">
-                                Swipe to Right
-                            </p>
-                        </div>
-                    )
-                    : (
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 w-full p-2 gap-4">
-                            {techStackArr.map((stack, index ) => (
-                                <div
-                                    key={index} 
-                                    className={`p-4 w-full border-2 ${stack.color} rounded-xl`}
-                                >
-                                    {CardContent(stack)}
+                <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ 
+                        duration: 0.8, 
+                        delay: 0.3, 
+                        ease: "easeIn" 
+                    }}
+                    className="w-full h-full p-1"
+                >
+                    {stackedCard
+                        ? (
+                            <div className="flex items-center justify-center w-full h-[90%] flex-col">
+                                <div className="relative w-[300px] h-[400px] mx-auto mb-4">
+                                    <StackedCard
+                                        items={items}
+                                        setItems={setItems}
+                                        CardContent={CardContent}
+                                    />
                                 </div>
-                            ))}
-                        </div>
-                    )
-                }
-            </motion.div>
+                                <p className="text-white font-Ptext text-base">
+                                    Swipe to Right
+                                </p>
+                            </div>
+                        )
+                        : (
+                            <div className="grid md:grid-cols-2 lg:grid-cols-3 w-full p-2 gap-4">
+                                {techStackArr.map((stack, index ) => (
+                                    <div
+                                        key={index} 
+                                        className={`p-4 w-full border-2 ${stack.color} rounded-xl`}
+                                    >
+                                        {CardContent(stack)}
+                                    </div>
+                                ))}
+                            </div>
+                        )
+                    }
+                </motion.div>
+            </div>
         </section>
     )
 }

@@ -61,7 +61,7 @@ const GrowthTimeLine = () => {
                     <h1 className="text-Mcolor font-Htext text-sm mb-2">
                         {timeline}
                     </h1>
-                    <p className="text-white/70 text-sm leading-relaxed">
+                    <p className="text-gray-400 text-sm leading-relaxed">
                         {text}
                     </p>
 

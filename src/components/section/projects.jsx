@@ -169,8 +169,8 @@ const Projects = ({setSelectedProject}) => {
             id="projects"
             className={`flex justify-center w-full h-auto p-1 mb-4  scroll-mt-20 sm:scroll-mt-32 ${isSmallMobile && "scroll-mt-40"}`}
         >
-            <motion.div 
-                className="w-[90%] md:w-[80%] lg:w-[93%] h-full"
+            <div 
+                className="w-full p-1"
             >
                 <h1 className="flex justify-start text-white font-Htext font-medium text-[clamp(0.95rem,2vw,1.50rem)] p-3 mb-2">
                     MY PROJECTS
@@ -187,7 +187,7 @@ const Projects = ({setSelectedProject}) => {
                                 delay: 0.2, 
                                 ease: "easeIn" 
                             }}
-                            className="flex items-center w-full p-4 mb-10 gap-4 bg-[#0a0a0a] border border-white/15 rounded-xl shadow-lg shadow-black/40 transition-all duration-300 hoverable:hover:border-[#EA5A0B] hoverable: hover:shadow-[0_0_20px_rgba(234,90,11,0.35)]"
+                            className="flex items-center flex-col sm:flex-row w-full p-4 mb-10 gap-4 bg-[#0a0a0a] border border-white/15 rounded-xl shadow-lg shadow-black/40 transition-all duration-300 hoverable:hover:border-[#EA5A0B] hoverable: hover:shadow-[0_0_20px_rgba(234,90,11,0.35)]"
                         >
                             <div className="w-full p-1">
                                 <div className="w-full rounded-xl overflow-hidden">
@@ -225,7 +225,7 @@ const Projects = ({setSelectedProject}) => {
                                         {project.title}
                                     </span>
                                 </div>
-                                <p className="text-gray-400 font-Htext font-medium text-[clamp(0.90rem,1.5vw,1.10rem)] mb-4">
+                                <p className="text-gray-400 font-Htext font-medium text-[clamp(0.90rem,1.5vw,1.10rem)] mb-4 leading-relaxed">
                                     {project.description}
                                 </p>
                                 <div className="flex items-start flex-wrap w-full gap-4 mb-2">
@@ -256,7 +256,7 @@ const Projects = ({setSelectedProject}) => {
                         </motion.div>
                     ))}
                 </div>
-            </motion.div>
+            </div>
         </section>
     )
 }

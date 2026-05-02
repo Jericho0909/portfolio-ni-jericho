@@ -13,17 +13,17 @@ const Main = ({setSelectedProject}) => {
             className="mt-[4.50rem] w-full h-auto p-1"
         >
             <Home/>
-            <div className={`w-full h-[58svh] ${isSmallMobile && "h-[30svh]" }`}></div>
+            <div className={`w-full h-[58svh] ${isSmallMobile && "h-[28svh]" }`}></div>
             <About>
                 <GrowthTimeLine />
             </About>
-            <div className={`w-full h-[58svh] ${isSmallMobile && "h-[30svh]" }`}></div>
+            <div className={`w-full h-[58svh] ${isSmallMobile && "h-[28svh]" }`}></div>
             <Projects
                 setSelectedProject={setSelectedProject}
             />
-            <div className={`w-full h-[58svh] ${isSmallMobile && "h-[30svh]" }`}></div>
+            <div className={`w-full h-[58svh] ${isSmallMobile && "h-[28svh]" }`}></div>
             <TechStack/>
-            <div className={`w-full h-[58svh] ${isSmallMobile && "h-[30svh]" }`}></div>
+            <div className={`w-full h-[58svh] ${isSmallMobile && "h-[28svh]" }`}></div>
             <Contact/>
         </main>
     )
