@@ -20,7 +20,7 @@ import M3img from "../../assets/img/M3web.webp"
 
 
 const Projects = ({setSelectedProject}) => {
-    const { ref, isVisible } = useSectionInView()
+    const { ref, isVisible } = useSectionInView({h:0.22})
     const { setActiveSection } = useContext(ActiveSectionContext)
     const { stackedCard, isSmallMobile } = useContext(WindowSizeContext)
     const { toggleModal } = useContext(ModalContext)
@@ -187,7 +187,7 @@ const Projects = ({setSelectedProject}) => {
                                 delay: 0.2, 
                                 ease: "easeIn" 
                             }}
-                            className="flex items-center flex-col sm:flex-row w-full p-4 mb-10 gap-4 bg-[#0a0a0a] border border-white/15 rounded-xl shadow-lg shadow-black/40 transition-all duration-300 hoverable:hover:border-[#EA5A0B] hoverable: hover:shadow-[0_0_20px_rgba(234,90,11,0.35)]"
+                            className="flex items-center flex-col md:flex-row w-full p-4 mb-10 md:gap-2 lg:gap-4 bg-[#0a0a0a] border border-white/15 rounded-xl shadow-lg shadow-black/40 transition-all duration-300 hoverable:hover:border-[#EA5A0B] hoverable: hover:shadow-[0_0_20px_rgba(234,90,11,0.35)]"
                         >
                             <div className="w-full p-1">
                                 <div className="w-full rounded-xl overflow-hidden">

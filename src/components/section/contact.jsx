@@ -13,7 +13,7 @@ import {
 import toast from "react-hot-toast";
 
 const Contact = () => {
-    const { ref, isVisible } = useSectionInView()
+    const { ref, isVisible } = useSectionInView({h:0.3})
     const { isSmallMobile } = useContext(WindowSizeContext)
     const { setActiveSection } = useContext(ActiveSectionContext)
     const [ email, setEmail ] = useState("")

@@ -1,8 +1,8 @@
 import { useIntersectionObserver } from "@uidotdev/usehooks";
  
-const useSectionInView = () => {
+const useSectionInView = ({h = 0}) => {
     const [ ref, entry ] = useIntersectionObserver({
-        threshold: 0.2,
+        threshold: h,
         root: null,
         rootMargin: "0px",
     })

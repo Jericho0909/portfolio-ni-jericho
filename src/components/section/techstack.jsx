@@ -20,7 +20,7 @@ import { Bot } from 'lucide-react';
 
 
 const TechStack = () => {
-    const { ref, isVisible } = useSectionInView()
+    const { ref, isVisible } = useSectionInView({h:0.3})
     const { setActiveSection } = useContext(ActiveSectionContext)
     const { isSmallMobile, stackedCard } = useContext(WindowSizeContext)
 

@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import CodeImg from "../../assets/img/code.webp"
 import { ArrowDown } from 'lucide-react';
 const About = ({ children }) => {
-    const { ref, isVisible } = useSectionInView()
+    const { ref, isVisible } = useSectionInView({h:0.2})
     const { stackedCard, isSmallMobile } = useContext(WindowSizeContext)
     const { setActiveSection } = useContext(ActiveSectionContext)
     const [ isShow, setIsShow ] = useState(false)

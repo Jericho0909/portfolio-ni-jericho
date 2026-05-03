@@ -14,7 +14,7 @@ import {
 } from 'lucide-react';
 import { TypeAnimation } from "react-type-animation";
 const Home = () => {
-    const { ref, isVisible } = useSectionInView()
+    const { ref, isVisible } = useSectionInView({h:0.4})
     const { setActiveSection } = useContext(ActiveSectionContext)
 
     useEffect(() => {
@@ -27,7 +27,7 @@ const Home = () => {
         <section 
             ref={ref}
             id="home"
-            className=" relative flex items-center justify-center gap-10 sm:gap-0 flex-col-reverse lg:flex-row  w-full h-auto sm:h-[85svh] mb-4 sm:scroll-mt-32"
+            className=" relative flex items-center justify-center gap-10 sm:gap-0 flex-col-reverse lg:flex-row  w-full h-auto sm:h-[80svh] mb-4 sm:scroll-mt-32"
         >
             <div className="flex items-start justify-center flex-col w-full h-full ml-0 lg:ml-20 p-1 space-y-6 cursor-default">
 
