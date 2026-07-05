@@ -42,14 +42,6 @@ const PortfolioPage = () => {
             <Header
                 handleScrollToSection={handleScrollToSection}
             />
-            <AnimatePresence mode="wait">
-                {isOpen && (
-                    <Modal
-                        selectedProject={selectedProject}
-                        setSelectedProject={setSelectedProject}
-                    />
-                )}
-            </AnimatePresence>
             <Main
                 setSelectedProject={setSelectedProject}
             />

@@ -35,6 +35,14 @@ const GrowthTimeLine = () => {
             text: "Developed a personal portfolio showcasing my frontend development approach, with a focus on reusable components, UI refinement, and user interaction. Built using React and Tailwind CSS, with Framer Motion for animations. Features include a reusable StackedCard system, responsive layouts, interactive modals, and an EmailJS-integrated contact form, all designed with performance, usability, and clean design principles in mind."
         },
         {
+            timeline: "April 2026 / Rest Period & Career Preparation",
+            text: "Took a short break to recharge while preparing for frontend developer opportunities. After applying for several positions and reflecting on my skill set, I decided to strengthen my expertise by learning Next.js before continuing my job search."
+        },
+        {
+            timeline: "May 2026 - July 2026 / Learn Next.js",
+            text: "Studied Next.js through hands-on development and built my fourth personal project, “My AniMa.” A personal anime and manga tracking web application that allows me to organize my favorite series, keep track of completed titles, monitor what I am currently watching or reading, and manage my watchlist and reading list. Through this project, I gained practical experience with Next.js features such as App Router, dynamic routing, server-side rendering, static generation, metadata management."
+        },
+        {
             timeline: "Present / Continuing to Learn and Build Projects",
             text: "Actively exploring modern web development practices and improving my frontend skills through hands-on React projects."
         },

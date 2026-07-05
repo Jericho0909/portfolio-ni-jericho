@@ -12,11 +12,15 @@ import {
     faReact,
     faTailwindCss,
     faTypescript,
-    faGithub
+    faGithub,
 } from "@fortawesome/free-brands-svg-icons";
-import { Flame } from 'lucide-react';
-import { Wrench } from 'lucide-react';
-import { Bot } from 'lucide-react';
+import { faN,
+    faS
+} from "@fortawesome/free-solid-svg-icons";
+import { Flame,
+    Wrench,
+    Bot
+} from 'lucide-react';
 
 
 const TechStack = () => {
@@ -45,7 +49,7 @@ const TechStack = () => {
                         icon={faCss3Alt} 
                         className="text-2xl text-[#1572B6]"
                     />,
-                    mastery: 70
+                    mastery: 75
                 },
                 {
                     id: 3,
@@ -54,7 +58,7 @@ const TechStack = () => {
                         icon={faJs}
                         className="text-2xl text-[#F7DF1E]"
                     />,
-                    mastery: 70
+                    mastery: 80
                 },
                 {
                     id: 4,
@@ -81,6 +85,16 @@ const TechStack = () => {
                         <FontAwesomeIcon icon={faTypescript}
                         className="text-2xl text-[#3178C6]"
                     />,
+                    mastery: 75
+                },
+                {
+                    id: 7,
+                    techName: "Next.js", 
+                    icon: 
+                        <FontAwesomeIcon 
+                        icon={faN}
+                        className="text-2xl text-[#FFFFFF]"
+                    />,
                     mastery: 70
                 }
             ],
@@ -88,14 +102,24 @@ const TechStack = () => {
         },
         {
             id: 2,
-            category: "BackEnd",
+            category: "BackEnd / BaaS",
             items: [
                 {
                     id: 1,
                     techName: "Firebase", 
                     icon: <Flame size={29} color="#FFA000"/>,
-                    mastery: 70
+                    mastery: 75
                 },
+                {
+                    id: 2,
+                    techName: "Supabase", 
+                    icon: 
+                        <FontAwesomeIcon 
+                        icon={faS}
+                        className="text-2xl text-[#3ECF8E]"
+                     />,
+                    mastery: 70
+                }
             ],
             color: "border-green-600"
         },
@@ -105,12 +129,12 @@ const TechStack = () => {
             items: [
                 {
                     id: 1,
-                    techName: "Git", 
+                    techName: "Github", 
                     icon: <FontAwesomeIcon
                         icon={faGithub}
                         className="text-2xl text-gray-300"
                     />,
-                    mastery: 70
+                    mastery: 75
                 },
                 {
                     id: 2,

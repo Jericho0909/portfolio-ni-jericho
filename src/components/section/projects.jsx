@@ -5,7 +5,7 @@ import ModalContext from "../../context/modalContext"
 import useSectionInView from "../../usehooks/useSectionInView"
 import StackedCard from "../stackedCard,"
 import { motion } from "framer-motion"
-import { Coffee, CookingPot } from 'lucide-react';
+import { Coffee, CookingPot, Eye } from 'lucide-react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBasketball } from "@fortawesome/free-solid-svg-icons";
 import C1img from "../../assets/img/c1web.webp"
@@ -17,6 +17,9 @@ import P3img from "../../assets/img/P3web.webp"
 import M1img from "../../assets/img/M1web.webp"
 import M2img from "../../assets/img/M2web.webp"
 import M3img from "../../assets/img/M3web.webp"
+import A1img from "../../assets/img/A1web.webp"
+import A2img from "../../assets/img/A2web.webp"
+import A3img from "../../assets/img/A3web.webp"
 
 
 const Projects = ({setSelectedProject}) => {
@@ -35,7 +38,7 @@ const Projects = ({setSelectedProject}) => {
                 C2img,
                 C3img
             ],
-            techStack: ["React", "Tailwind", "Farmer Motion", "Firebase"],
+            techStack: ["React", "Tailwind", "Firebase"],
             links: [
                 { 
                     label: "Live Demo", 
@@ -61,7 +64,7 @@ const Projects = ({setSelectedProject}) => {
                 P3img
 
             ],
-            techStack: ["React", "TypeScript", "Tailwind", "Farmer Motion", "Firebase"],
+            techStack: ["React", "TypeScript", "Tailwind", "Firebase"],
             links: [
                 { 
                     label: "Live Demo", 
@@ -86,7 +89,7 @@ const Projects = ({setSelectedProject}) => {
                 M2img,
                 M3img
             ],
-            techStack: ["React", "TypeScript", "Tailwind", "Farmer Motion", "Firebase"],
+            techStack: ["React", "TypeScript", "Tailwind", "Firebase"],
             links: [
                 { 
                     label: "Live Demo", 
@@ -102,7 +105,33 @@ const Projects = ({setSelectedProject}) => {
                 icon: <CookingPot size={24} color={"#2E7D32"}/>
             },
     
+        },
+        {
+            id: 4,
+            title: "My AniMa",
+            description: "An anime and manga tracking web application that helps users organize and manage their watchlists and reading lists. Supports status tracking and favorites for quick access.",
+            image: [
+                A1img,
+                A2img,
+                A3img
+            ],
+            techStack: ["Next.js(React)", "TypeScript", "Tailwind", "Supabase"],
+            links: [
+                { 
+                    label: "Live Demo", 
+                    url: "https://my-ani-ma.vercel.app/"
+                },
+                { 
+                    label: "GitHub", 
+                    url: "https://github.com/Jericho0909/myAniMa.git"
+                },
+            ],
+            featured: true,
+            icon: {
+                icon: <Eye size={24} color={"#DB2777"}/>
+            },
         }
+
     ]
 
     const [ items, setItems ] = useState(projectsArr)

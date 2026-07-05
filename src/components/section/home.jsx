@@ -62,7 +62,7 @@ const Home = () => {
                     className="flex items-center gap-3 text-white font-Htext font-medium text-[clamp(0.95rem,2vw,1.50rem)]"
                 >
                     <span>
-                        React Frontend Developer
+                        Frontend Developer (React / Next.js)
                     </span>
                     <FontAwesomeIcon 
                         icon={faReact} 
