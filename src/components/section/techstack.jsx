@@ -19,7 +19,8 @@ import { faN,
 } from "@fortawesome/free-solid-svg-icons";
 import { Flame,
     Wrench,
-    Bot
+    Bot,
+    Database
 } from 'lucide-react';
 
 
@@ -91,8 +92,7 @@ const TechStack = () => {
                     id: 7,
                     techName: "Next.js", 
                     icon: 
-                        <FontAwesomeIcon 
-                        icon={faN}
+                        <FontAwesomeIcon icon={faN}
                         className="text-2xl text-[#FFFFFF]"
                     />,
                     mastery: 70
@@ -118,6 +118,12 @@ const TechStack = () => {
                         icon={faS}
                         className="text-2xl text-[#3ECF8E]"
                      />,
+                    mastery: 70
+                },
+                {
+                    id: 3,
+                    techName: "Prisma", 
+                    icon: <Database size={29} color="#FFFFFF"/>,
                     mastery: 70
                 }
             ],

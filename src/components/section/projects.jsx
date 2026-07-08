@@ -115,7 +115,7 @@ const Projects = ({setSelectedProject}) => {
                 A2img,
                 A3img
             ],
-            techStack: ["Next.js(React)", "TypeScript", "Tailwind", "Supabase"],
+            techStack: ["Next.js(React)", "TypeScript", "Tailwind", "Supabase", "Prisma"],
             links: [
                 { 
                     label: "Live Demo", 
