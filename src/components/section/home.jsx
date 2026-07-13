@@ -97,7 +97,7 @@ const Home = () => {
                     <button
                         onClick={() => {
                             document.getElementById('projects')
-                            .scrollIntoView({ behavior: 'smooth', block: 'center' })
+                            .scrollIntoView({ behavior: 'smooth', block: 'start' })
                         }}
                         className="flex items-center px-6 py-3 gap-2 text-base text-white border-x-2 border-Mcolor rounded-md transition-transform duration-300 hover:scale-105 focus:outline-none"
                     >

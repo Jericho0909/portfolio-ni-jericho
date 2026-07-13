@@ -57,7 +57,7 @@ const About = ({ children }) => {
                             </h2>
 
                             <p className="text-gray-400 font-Ptext font-medium text-[clamp(0.80rem,1.5vw,0.90rem)]">
-                                I'm a React Developer who prioritizes UX design — building websites that are smooth, accessible, and effortless to navigate, whether on desktop or mobile.
+                                I'm a Frontend Developer specializing in React and Next.js, with a strong focus on UX design — building responsive, accessible, and seamless web applications that feel intuitive to use across desktop and mobile devices.
                             </p>
                         </div>
 

@@ -1,7 +1,6 @@
 import { useEffect, useContext, useState } from "react"
 import ActiveSectionContext from "../../context/activeSectionContext"
 import WindowSizeContext from "../../context/windowSizeContext"
-import ModalContext from "../../context/modalContext"
 import useSectionInView from "../../usehooks/useSectionInView"
 import StackedCard from "../stackedCard,"
 import { motion } from "framer-motion"
@@ -26,7 +25,6 @@ const Projects = ({setSelectedProject}) => {
     const { ref, isVisible } = useSectionInView({h:0.22})
     const { setActiveSection } = useContext(ActiveSectionContext)
     const { stackedCard, isSmallMobile } = useContext(WindowSizeContext)
-    const { toggleModal } = useContext(ModalContext)
 
     const projectsArr = [
         {
@@ -109,7 +107,7 @@ const Projects = ({setSelectedProject}) => {
         {
             id: 4,
             title: "My AniMa",
-            description: "An anime and manga tracking web application that helps users organize and manage their watchlists and reading lists. Supports status tracking and favorites for quick access.",
+            description: "An anime and manga tracking web application that allows users to manage their watchlists and reading lists, track current and completed titles, save favorites, and organize future anime and manga plans.",
             image: [
                 A1img,
                 A2img,
@@ -136,11 +134,6 @@ const Projects = ({setSelectedProject}) => {
 
     const [ items, setItems ] = useState(projectsArr)
 
-    const handleOpenModal = (id) => {
-        const project = projectsArr.find(project => project.id === id)
-        setSelectedProject(project)
-        toggleModal()
-    }
 
     const CardContent = (card) => {
         return(

@@ -13,9 +13,10 @@ import {
     faTailwindCss,
     faTypescript,
     faGithub,
+    faGitAlt
 } from "@fortawesome/free-brands-svg-icons";
 import { faN,
-    faS
+    faS,
 } from "@fortawesome/free-solid-svg-icons";
 import { Flame,
     Wrench,
@@ -95,7 +96,7 @@ const TechStack = () => {
                         <FontAwesomeIcon icon={faN}
                         className="text-2xl text-[#FFFFFF]"
                     />,
-                    mastery: 70
+                    mastery: 80
                 }
             ],
             color: "border-blue-600"
@@ -135,6 +136,15 @@ const TechStack = () => {
             items: [
                 {
                     id: 1,
+                    techName: "Git", 
+                    icon: <FontAwesomeIcon
+                        icon={faGitAlt}
+                        className="text-2xl text-[#F05032]"
+                    />,
+                    mastery: 80
+                },
+                {
+                    id: 2,
                     techName: "Github", 
                     icon: <FontAwesomeIcon
                         icon={faGithub}
@@ -143,13 +153,13 @@ const TechStack = () => {
                     mastery: 75
                 },
                 {
-                    id: 2,
+                    id: 3,
                     techName: "VS Code", 
                     icon: <Wrench size={29} color="#007ACC"/>,
                     mastery: 80
                 },
                 {
-                    id: 3,
+                    id: 4,
                     techName: "AI-Assisted", 
                     icon: <Bot size={29} color="#6e6e6e"/>,
                     mastery: 85

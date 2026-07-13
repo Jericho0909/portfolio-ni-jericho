@@ -1,14 +1,11 @@
 import { useState, useContext, useEffect } from "react"
 import WindowSizeContext from "../context/windowSizeContext"
-import ModalContext from "../context/modalContext"
 import Header from "../components/header"
 import Main from "../components/main"
 import Footer from "../components/footer"
-import Modal from "../components/modal"
 import { AnimatePresence } from "framer-motion"
 import { Toaster } from "react-hot-toast";
 const PortfolioPage = () => {
-    const { isOpen } = useContext(ModalContext)
     const { isSmallMobile } = useContext(WindowSizeContext)
     const [ selectedProject, setSelectedProject ] = useState({})
     const [ isDelay, setIsDelay ] = useState(true)
