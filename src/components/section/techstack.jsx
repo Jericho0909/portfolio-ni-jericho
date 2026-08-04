@@ -13,7 +13,7 @@ import {
     faTailwindCss,
     faTypescript,
     faGithub,
-    faGitAlt
+    faGitAlt,
 } from "@fortawesome/free-brands-svg-icons";
 import { faN,
     faS,
@@ -21,7 +21,9 @@ import { faN,
 import { Flame,
     Wrench,
     Bot,
-    Database
+    Database,
+    TreePalm,
+    Move3d
 } from 'lucide-react';
 
 
@@ -132,7 +134,7 @@ const TechStack = () => {
         },
         {
             id: 3,
-            category: "Tools",
+            category: "Tools & Libraries",
             items: [
                 {
                     id: 1,
@@ -163,6 +165,18 @@ const TechStack = () => {
                     techName: "AI-Assisted", 
                     icon: <Bot size={29} color="#6e6e6e"/>,
                     mastery: 85
+                },
+                {
+                    id: 5,
+                    techName: "TanStack Query", 
+                    icon: <TreePalm size={29} color="#FF4154"/>,
+                    mastery: 75
+                },
+                {
+                    id: 6,
+                    techName: "Framer Motion", 
+                    icon: <Move3d size={29} color="#FFFF"/>,
+                    mastery: 80
                 },
 
             ],
